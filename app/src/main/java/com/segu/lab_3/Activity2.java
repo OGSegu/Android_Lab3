@@ -6,25 +6,18 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Activity2 extends AppCompatActivity {
+public class Activity2 extends BasicActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener((item) -> {
-            if (item.getItemId() == R.id.about) {
-                Intent aboutActivity = new Intent(this, AboutActivity.class);
-                startActivity(aboutActivity);
-                return true;
-            }
-            return false;
-        });
+        initNav(findViewById(R.id.secondActivity));
 
         Button toFirstBtn = findViewById(R.id.to_first_btn);
         toFirstBtn.setOnClickListener((btn) -> finish());
@@ -34,13 +27,5 @@ public class Activity2 extends AppCompatActivity {
             Intent thirdActivityIntent = new Intent(this, Activity3.class);
             startActivity(thirdActivityIntent);
         });
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (resultCode == 1) {
-            finish();
-        }
-        super.onActivityResult(requestCode, resultCode, data);
     }
 }
