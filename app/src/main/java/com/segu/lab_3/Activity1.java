@@ -21,7 +21,8 @@ public class Activity1 extends BasicActivity {
 
         Button toSecondActivityBtn = findViewById(R.id.to_second_btn);
         toSecondActivityBtn.setOnClickListener(btn -> {
-            Intent secondActivityIntent = new Intent(this, Activity2.class);
+            Intent secondActivityIntent = new Intent(this, Activity2.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
             startActivity(secondActivityIntent);
         });
     }
