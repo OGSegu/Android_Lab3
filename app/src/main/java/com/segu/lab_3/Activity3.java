@@ -14,22 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Activity3 extends AppCompatActivity {
+public class Activity3 extends BasicActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.third_activity);
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener((item) -> {
-            if (item.getItemId() == R.id.about) {
-                Intent aboutActivity = new Intent(this, AboutActivity.class);
-                startActivity(aboutActivity);
-                return true;
-            }
-            return false;
-        });
+        initNav(findViewById(R.id.thirdActivity));
 
         Button toFirstBtn = findViewById(R.id.to_first_btn);
         toFirstBtn.setOnClickListener((btn) -> {
@@ -38,8 +29,6 @@ public class Activity3 extends AppCompatActivity {
         });
 
         Button toSecondBtn = findViewById(R.id.to_second_btn);
-        toSecondBtn.setOnClickListener((btn) -> {
-            finish();
-        });
+        toSecondBtn.setOnClickListener((btn) -> finish());
     }
 }
