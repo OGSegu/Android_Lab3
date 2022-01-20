@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/fragment1_destination">
+
+    <fragment
+        android:id="@+id/fragment1_destination"
+        android:name="com.segu.lab_3.Fragment1"
+        android:label="Fragment1">
+        <action
+            android:id="@+id/action_fragment1_to_fragment2"
+            app:destination="@id/fragment2_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2_destination"
+        android:name="com.segu.lab_3.Fragment2"
+        android:label="Fragment2">
+        <action
+            android:id="@+id/action_fragment2_to_fragment3"
+            app:destination="@id/fragment3_destination" />
+        <action
+            android:id="@+id/action_fragment2_to_fragment1"
+            app:destination="@id/fragment1_destination"
+            app:popUpTo="@id/fragment1_destination"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment3_destination"
+        android:name="com.segu.lab_3.Fragment3"
+        android:label="Fragment3">
+        <action
+            android:id="@+id/action_fragment3_to_fragment1"
+            app:destination="@id/fragment1_destination"
+            app:popUpTo="@id/fragment1_destination"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragment3_to_fragment2"
+            app:destination="@id/fragment2_destination"
+            app:popUpTo="@id/fragment2_destination"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/activityAbout_destination"
+        android:name="com.segu.lab_3.AboutActivity"
+        android:label="activity_about"
+        tools:layout="@layout/about_activity" />
+    <action
+        android:id="@+id/action_to_activityAbout"
+        app:destination="@id/activityAbout_destination" />
+</navigation>
