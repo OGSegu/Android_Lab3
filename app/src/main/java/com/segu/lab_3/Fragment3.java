@@ -30,14 +30,10 @@ public class Fragment3 extends Fragment {
         NavController navController = Navigation.findNavController(view);
 
         Button toFirstBtn = view.findViewById(R.id.to_first_btn);
-        toFirstBtn.setOnClickListener((btn) -> {
-            navController.navigate(R.id.action_fragment3_to_fragment1);
-        });
+        toFirstBtn.setOnClickListener((btn) -> navController.navigate(R.id.action_fragment3_to_fragment1));
 
         Button toSecondBtn = view.findViewById(R.id.to_second_btn);
-        toSecondBtn.setOnClickListener((btn) -> {
-            navController.navigate(R.id.action_fragment3_to_fragment2);
-        });
+        toSecondBtn.setOnClickListener((btn) -> navController.navigate(R.id.action_fragment3_to_fragment2));
     }
 }
 
