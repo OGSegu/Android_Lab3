@@ -33,7 +33,7 @@ public class Activity3 extends AppCompatActivity {
 
         Button toFirstBtn = findViewById(R.id.to_first_btn);
         toFirstBtn.setOnClickListener((btn) -> {
-            startActivity(new Intent(this, Activity1.class).addFlags(FLAG_ACTIVITY_CLEAR_TOP));
+            setResult(1);
             finish();
         });
 

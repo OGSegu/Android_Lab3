@@ -32,7 +32,7 @@ public class Activity2 extends AppCompatActivity {
         Button toThirdBtn = findViewById(R.id.to_third_btn);
         toThirdBtn.setOnClickListener((btn) -> {
             Intent thirdActivityIntent = new Intent(this, Activity3.class);
-            startActivity(thirdActivityIntent);
+            startActivityForResult(thirdActivityIntent, 2);
         });
     }
 
