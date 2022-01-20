@@ -27,5 +27,14 @@ public class Activity2 extends BasicActivity {
             Intent thirdActivityIntent = new Intent(this, Activity3.class);
             startActivityForResult(thirdActivityIntent, 2);
         });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode == 1) {
+            finish();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
