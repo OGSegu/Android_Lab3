@@ -28,8 +28,6 @@ public class Activity3 extends BasicActivity {
         });
 
         Button toSecondBtn = findViewById(R.id.to_second_btn);
-        toSecondBtn.setOnClickListener((btn) -> {
-            finish();
-        });
+        toSecondBtn.setOnClickListener((btn) -> finish());
     }
 }
